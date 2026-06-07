@@ -8,21 +8,16 @@ manifest:
       url-base: https://github.com/caksoylar  
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
-    - name: eswai
-      url-base: https://github.com/eswai
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-rgbled-widget
-      remote: caksoylar
-      revision: main
     - name: zmk-driver-paw3222
       remote: sekigon-gonnoc
       revision: main
-    - name: zmk-naginata
-      remote: eswai
+    - name: zmk-rgbled-widget
+      remote: caksoylar
       revision: main
   self:
     path: config
