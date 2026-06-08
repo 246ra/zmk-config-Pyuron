@@ -1,3 +1,4 @@
+#include <input/processors.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -28,6 +29,12 @@
     quick-tap-ms = <150>;
 };
 &sl { release-after-ms = <120>; }; // タイムアウトを指定
+
+// トラックボール設定
+&trackball_listener_R{
+    input-processors = <&zip_temp_layer AMO 10000>,
+                       <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>;
+};
 
 / {
     combos {
