@@ -497,7 +497,6 @@
 &LCG_F4           &LCG_D             &LCG_L           &LCG_R         &kp LG(TAB) &kp LSHFT    &kp RGUI  &kp LG(T)        &kp LG(LA(D))     &none               &none     &none
 &none             &none                                              &none       &none        &none     &none                                                  &none     &none
             >;
-            sensor-bindings = <&move_leri>;
         };
 
         SETUP {
