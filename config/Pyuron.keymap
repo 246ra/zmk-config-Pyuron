@@ -42,13 +42,13 @@
         input-processors = 
             <&zip_temp_layer AMO 10000>,
             <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
-            <&zip_xy_scaler 1 4>;
+            <&zip_xy_scaler 2 3>;
     };
     hiscroller {
         layers = <MAC>;
         input-processors = 
             <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-            <&zip_xy_scaler 1 8>,
+            <&zip_xy_scaler 1 4>,
             <&zip_scroll_scaler 1 5>,
             <&zip_xy_to_scroll_mapper>;
     }; 
@@ -537,7 +537,7 @@
             bindings = <
 &none_exit_AML &none_exit_AML   &none_exit_AML    &none_exit_AML    &none_exit_AML                                         &none_exit_AML &none_exit_AML  &none_exit_AML    &none_exit_AML   &none_exit_AML
 &none_exit_AML &mkp_sl_AML MB1  &mo_exit_AML SCR  &mkp_sl_AML MB2   &none_exit_AML                                         &none_exit_AML &mkp_sl_AML MB1 &mo_exit_AML SCR  &mkp_sl_AML MB2  &none_exit_AML
-&none_exit_AML &mkp_sl_AML MB4  &mkp_sl_AML MB3   &mkp_sl_AML MB5   &none_exit_AML    &none_exit_AML      &none_exit_AML   &none_exit_AML &mkp_sl_AML MB4 &mkp_sl_AML MB3   &mkp_sl_AML MB5  &none_exit_AML
+&mltkp MOU 0   &mkp_sl_AML MB4  &mkp_sl_AML MB3   &mkp_sl_AML MB5   &none_exit_AML    &none_exit_AML      &none_exit_AML   &none_exit_AML &mkp_sl_AML MB4 &mkp_sl_AML MB3   &mkp_sl_AML MB5  &mltkp MOU 0
 &none_exit_AML &none_exit_AML                                       &mltkp MOV SPACE  &mltkp MAC LANG1    &mltkp LOW BSPC  &mltkp RAI RET                                   &none_exit_AML   &none_exit_AML
             >;
         };
