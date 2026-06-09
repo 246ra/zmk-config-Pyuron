@@ -490,7 +490,7 @@
 &kp Q        &kp L        &kp U         &kp COMMA     &kp DOT                                                  &kp F        &kp W         &kp R         &kp Y        &kp P
 &hrm LGUI E  &hrm LSHFT I &hrm LCTRL A  &hrm LALT O   &kp MINUS                                                &kp K        &hrm RALT T   &hrm RCTRL N  &hrm RSHFT S &hrm RGUI H
 &klt MOU Z   &klt MAC X   &klt LOW C    &klt MOV V    &jseco          &lt SCR LANG2             &lt SCR RIGHT  &kp G        &klt MOV D    &klt LOW M    &klt MAC J   &klt MOU B
-&kp LALT     &kp LANG2                                &lt MOV SPACE   &qhrm LSHFT LG1           &lt LOW BSPC   &lt RAI RET                              &trans       &mo MOU
+&kp LALT     &kp LANG2                                &lt MOV SPACE   &qhrm LSHFT LANG1         &lt LOW BSPC   &lt RAI RET                              &trans       &mo MOU
             >;
         };
 
