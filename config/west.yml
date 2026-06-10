@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/sekigon-gonnoc
     - name: eswai
       url-base: https://github.com/eswai
+    - name: zettaface
+      url-base: https://github.com/zettaface
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -23,6 +25,9 @@ manifest:
       revision: main
     - name: zmk-naginata
       remote: eswai
+      revision: main
+    - name: zmk-input-processor-keybind
+      remote: zettaface
       revision: main
   self:
     path: config
