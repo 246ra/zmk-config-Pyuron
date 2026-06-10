@@ -40,7 +40,7 @@
     hiscroller_L {
         layers = <MAC>;
         input-processors = 
-            <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
+            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
             <&zip_xy_scaler 1 2>,
             <&zip_scroll_scaler 1 5>,
             <&zip_xy_to_scroll_mapper>;
@@ -56,7 +56,7 @@
         input-processors = 
             <&zip_temp_layer AMO 10000>,
             <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
-            <&zip_xy_scaler 2 3>;
+            <&zip_xy_scaler 1 3>;
     };
     hiscroller_R {
         layers = <MAC>;
@@ -368,20 +368,6 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        // 入力切替(ダブルタップ)
-        LG1: tap_dance_LANG1 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <150>; // ダブルタップと判定するミリ秒
-            bindings = <&kp LANG1>, <&kp LANG2>;
-        };
-        // 入力切替(ダブルタップ)
-        LG2: tap_dance_LANG2 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>; // ダブルタップと判定するミリ秒
-            bindings = <&kp INT4>, <&kp INT5>;
-        };
         // タップ&ホールド
         qhrm: qickly_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -390,24 +376,6 @@
             quick-tap-ms = <150>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-        };
-        // タップ&ホールド(入力切替)
-        qhrm1: qickly_homerow_LANG {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            quick-tap-ms = <250>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&LG1>;
-        };
-        // タップ&ホールド(入力切替)
-        qhrm2: qickly_homerow_INT {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            quick-tap-ms = <250>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&LG2>;
         };
         // HRMでcaps切替える
         qhrmc: qickly_homerow_mods_caps {
@@ -507,7 +475,7 @@
 &kp Q        &kp W        &kp E         &kp R         &kp T                                                   &kp Y        &kp U         &kp I          &kp O         &kp P
 &hrm LGUI A  &hrm LSHFT S &hrm LCTRL D  &hrm LALT F   &kp G                                                   &kp H        &hrm RALT J   &hrm RCTRL K   &hrm RSHFT L  &hjseco
 &klt MOU Z   &klt MAC X   &klt LOW C    &klt RAI V    &kp B          &lt SCR LANG2             &lt SCR RIGHT  &kp N        &klt RAI M    &klt LOW COMMA &klt MAC DOT  &klt MOU FSLH
-&kp LALT     &kp LANG2                                &lt MOV SPACE  &qhrm1 LSHFT 0            &lt LOW BSPC   &lt RAI RET                               &trans        &mo MOU
+&kp LALT     &kp LANG2                                &lt MOV SPACE  &lt MAC LANG1             &lt LOW BSPC   &lt RAI RET                               &trans        &mo MOU
             >;
         };
 
@@ -516,7 +484,7 @@
 &kp Q        &kp W        &kp E         &kp R         &kp T                                                   &kp Y        &kp U         &kp I          &kp O         &kp P
 &hrm LGUI A  &hrm LSHFT S &hrm LCTRL D  &hrm LALT F   &kp G                                                   &kp H        &hrm RALT J   &hrm RCTRL K   &hrm RSHFT L  &hjseco
 &klt MOU Z   &klt MAC X   &klt LOW C    &klt RAI V    &kp B          &lt SCR INT5              &lt SCR RIGHT  &kp N        &klt RAI M    &klt LOW COMMA &klt MAC DOT  &klt MOU FSLH
-&kp LALT     &kp INT5                                 &lt MOV SPACE  &qhrm2 LSHFT 0            &lt LOW BSPC   &lt RAI RET                               &trans        &mo MOU
+&kp LALT     &kp INT5                                 &lt MOV SPACE  &lt MAC INT4              &lt LOW BSPC   &lt RAI RET                               &trans        &mo MOU
             >;
         };
 
@@ -525,7 +493,7 @@
 &kp Q        &kp L        &kp U         &kp COMMA     &kp DOT                                                  &kp F        &kp W         &kp R         &kp Y        &kp P
 &hrm LGUI E  &hrm LSHFT I &hrm LCTRL A  &hrm LALT O   &kp MINUS                                                &kp K        &hrm RALT T   &hrm RCTRL N  &hrm RSHFT S &hrm RGUI H
 &klt MOU Z   &klt MAC X   &klt LOW C    &klt RAI V    &jseco          &lt SCR LANG2             &lt SCR RIGHT  &kp G        &klt RAI D    &klt LOW M    &klt MAC J   &klt MOU B
-&kp LALT     &kp LANG2                                &lt MOV SPACE   &qhrm1 LSHFT 0            &lt LOW BSPC   &lt RAI RET                              &trans       &mo MOU
+&kp LALT     &kp LANG2                                &lt MOV SPACE   &lt MAC LANG1             &lt LOW BSPC   &lt RAI RET                              &trans       &mo MOU
             >;
         };
 
@@ -561,7 +529,7 @@
 &kp ESC        &kp INS             &kp INT5          &kp INT4       &kp CAPS                              &kp K_APP     &kp BSPC  &kp DEL    &kp LC(BSPC) &kp TAB
 &qhrm LGUI TAB &qhrm LSHFT LS(TAB) &qhrm LCTRL GRAVE &qhrmc LALT 0  &none                                 &kp LEFT      &kp DOWN  &kp UP     &kp RIGHT    &kp RET
 &kp PSCRN      &kp LG(LS(S))       &kp LC(T)         &kp LC(I)      &kp LC(O)  &kp LSHFT      &kp RGUI    &kp HOME      &kp PG_DN &kp PG_UP  &kp END      &none
-&none          &none                                                &none      &none          &lt SET DEL &lt MAC SPACE                      &none        &none
+&none          &none                                                &none      &none          &lt SET DEL &lt RAI SPACE                      &none        &none
             >;
         };
 
