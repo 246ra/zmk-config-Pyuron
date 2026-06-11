@@ -72,7 +72,7 @@
         layers = <RAI>;
         input-processors = 
             <&zip_keybind_arrow>,
-            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>;
+            <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>;
     };
     snipe {
         layers = <MOU>;
