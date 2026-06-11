@@ -70,7 +70,9 @@
         <&zip_xy_scaler 4 5>;
     sound {
         layers = <RAI>;
-        input-processors = <&zip_keybind_arrow>;
+        input-processors = 
+            <&zip_keybind_arrow>,
+            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>;
     };
     snipe {
         layers = <MOU>;
