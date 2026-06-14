@@ -6,7 +6,7 @@
 #include <behaviors/naginata.dtsi>
 #include <input/processors/zmk-input-processor-keybind.dtsi>
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1800
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 2000
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
 // 薙刀式のOS設定  (WIN 0, MAC 1, LINUX 2, IOS 3)
@@ -68,14 +68,14 @@
 &trackball_listener_L{
     input-processors = <
         &zip_xy_to_scroll_mapper
-        &zip_scroll_transform INPUT_TRANSFORM_XY_SWAP
+        &zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)
         &zip_scroll_scaler 1 10
     >;
     hiscroller_L {
         layers = <MAC>;
         input-processors = <
             &zip_xy_to_scroll_mapper
-            &zip_scroll_transform INPUT_TRANSFORM_XY_SWAP
+            &zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)
             &zip_scroll_scaler 2 1
         >;
     };
@@ -88,6 +88,7 @@
     sound {
         layers = <RAI>;
         input-processors = <
+            &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)
             &zip_keybind_arrow
         >;
     };
@@ -104,7 +105,7 @@
         input-processors = <
             &zip_xy_to_scroll_mapper
             &zip_scroll_transform INPUT_TRANSFORM_XY_SWAP
-            &zip_scroll_scaler 2 1
+            &zip_scroll_scaler 5 1
         >;
     }; 
     scroller {
@@ -112,7 +113,7 @@
         input-processors = <
             &zip_xy_to_scroll_mapper
             &zip_scroll_transform INPUT_TRANSFORM_XY_SWAP
-            &zip_scroll_scaler 1 10
+            &zip_scroll_scaler 1 5
         >;
     };
 };
