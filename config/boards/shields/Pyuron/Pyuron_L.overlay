@@ -33,6 +33,11 @@
     };
 };
 
+// キー入力中のオートマウスレイヤー誤爆防止
+&zip_temp_layer {
+    require-prior-idle-ms = <125>;
+};
+
 &trackball_split_L {
     device = <&trackball_L>;
 };
