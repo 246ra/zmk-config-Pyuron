@@ -5,6 +5,7 @@
 #include <input/processors.dtsi>
 #include <behaviors/naginata.dtsi>
 #include <input/processors/zmk-input-processor-keybind.dtsi>
+#include <behaviors/rgbled_widget.dtsi>
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 2200
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
