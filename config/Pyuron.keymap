@@ -7,7 +7,7 @@
 #include <input/processors/zmk-input-processor-keybind.dtsi>
 #include <behaviors/rgbled_widget.dtsi>
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 2200
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 2500
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
 // 薙刀式のOS設定  (WIN 0, MAC 1, LINUX 2, IOS 3)
@@ -20,14 +20,13 @@
 #define NAG 3
 #define AMO 4
 #define LMO 5
-#define DOU 6
-#define MOU 7
-#define MOV 8
-#define LOW 9
-#define RAI 10
-#define MAC 11
-#define SET 12
-#define SCR 13
+#define MOU 6
+#define MOV 7
+#define LOW 8
+#define RAI 9
+#define MAC 10
+#define SET 11
+#define SCR 12
 
 // layerの設定
 &lt {
@@ -64,14 +63,14 @@
 &trackball_listener_L{
     input-processors = <
         &zip_xy_to_scroll_mapper
-        &zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)
-        &zip_scroll_scaler 1 10
+        &zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+        &zip_scroll_scaler 1 5
     >;
     hiscroller_L {
         layers = <MAC>;
         input-processors = <
             &zip_xy_to_scroll_mapper
-            &zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)
+            &zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
             &zip_scroll_scaler 2 1
         >;
     };
@@ -92,8 +91,8 @@
         layers = <MOU>;
         input-processors = <
             &zip_temp_layer AMO 10000
-            &zip_xy_scaler 1 5
             &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)
+            &zip_xy_scaler 1 10
         >;
     };
     hiscroller_R {
@@ -101,7 +100,7 @@
         input-processors = <
             &zip_xy_to_scroll_mapper
             &zip_scroll_transform INPUT_TRANSFORM_XY_SWAP
-            &zip_scroll_scaler 5 1
+            &zip_scroll_scaler 2 1
         >;
     }; 
     scroller {
@@ -366,7 +365,7 @@
                 <&macro_param_1to1 &mkp MACRO_PLACEHOLDER>,
                 <&macro_tap>,
                 <&ea>,
-                <&sl_200 DOU>;
+                <&sl_150 AMO>;
         };
         // マウス入力
         mkpea: mkp_exit_AML {
@@ -398,11 +397,11 @@
             display-name = "Toggle Layer Off";
             toggle-mode = "off";
         };
-        sl_200: sl_200 {   // マウスレイヤーにとどまる時間
+        sl_150: sl_150 {   // マウスレイヤーにとどまる時間
             compatible = "zmk,behavior-sticky-key";
             bindings = <&mo>;
             #binding-cells = <1>;
-            release-after-ms = <200>;
+            release-after-ms = <150>;
         };
         // マウス入力にmtをホールドで追加
         hmkpea: mkp_on_hold {
@@ -616,15 +615,6 @@
 &none  &cmkpea MB1  &none       &mkpea MB2  &none                   &none  &cmkpea MB1  &none       &mkpea MB2  &none
 &none  &mkpea MB4   &mkpea MB3  &mkpea MB5  &none  &none     &none  &none  &mkpea MB4   &mkpea MB3  &mkpea MB5  &none
 &none  &none                                &none  &none     &none  &none                           &none       &none
-            >;
-        };
-
-        DOUBLE {
-            bindings = <
-&trans  &trans      &trans  &trans  &trans                     &trans  &trans      &trans  &trans  &trans
-&trans  &mkpea MB1  &trans  &trans  &trans                     &trans  &mkpea MB1  &trans  &trans  &trans
-&trans  &trans      &trans  &trans  &trans  &trans     &trans  &trans  &trans      &trans  &trans  &trans
-&trans  &trans                      &trans  &trans     &trans  &trans                      &trans  &trans
             >;
         };
 
