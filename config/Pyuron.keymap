@@ -91,7 +91,7 @@
         layers = <LMO>;
         input-processors = <
             &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)
-            &zip_xy_scaler 1 5
+            &zip_xy_scaler 1 2
         >;
     };
     hiscroller_R {
@@ -610,10 +610,10 @@
 
         LMOUSE {
             bindings = <
-&none  &none        &none       &none       &none                   &none  &none        &none       &none       &none
-&none  &cmkpea MB1  &none       &mkpea MB2  &none                   &none  &cmkpea MB1  &none       &mkpea MB2  &none
-&none  &mkpea MB4   &mkpea MB3  &mkpea MB5  &none  &none     &none  &none  &mkpea MB4   &mkpea MB3  &mkpea MB5  &none
-&none  &none                                &none  &none     &none  &none                           &none       &none
+&none  &none        &none       &none              &none                   &none  &none        &none       &none              &none
+&none  &cmkpea MB1  &none       &hmkpea LSHFT MB2  &none                   &none  &cmkpea MB1  &none       &hmkpea LSHFT MB2  &none
+&none  &mkpea MB4   &mkpea MB3  &hmkpea LCTRL MB5  &none  &none     &none  &none  &mkpea MB4   &mkpea MB3  &hmkpea LCTRL MB5  &none
+&none  &none                                       &none  &none     &none  &none                           &none              &none
             >;
         };
 
