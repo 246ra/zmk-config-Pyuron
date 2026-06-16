@@ -88,10 +88,10 @@
         >;
     };
     snipe {
-        layers = <MOU>;
+        layers = <LMO>;
         input-processors = <
             &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)
-            &zip_xy_scaler 1 10
+            &zip_xy_scaler 1 5
         >;
     };
     hiscroller_R {
