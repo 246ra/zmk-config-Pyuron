@@ -601,10 +601,10 @@
 
         AMOUSE {
              bindings = <
-&ea        &ea          &moea MAC   &ea                &ea                                                   &ea            &ea          &moea MAC   &ea                &ea
-&moea LMO  &cmkpea MB1  &moea SCR   &hmkpea LSHFT MB2  &ea                                                   &ea            &cmkpea MB1  &moea SCR   &hmkpea RSHFT MB2  &moea LMO
-&ea        &mkpea MB4   &mkpea MB3  &hmkpea LCTRL MB5  &ea             &kp LANG2             &ea             &ea            &mkpea MB4   &mkpea MB3  &hmkpea RCTRL MB5  &ea
-&ea        &ea                                         &ltea MOV SPACE &mtea LSHFT LANG1     &ltea LOW BSPC  &ltea RAI RET                           &ea                &ea
+&ea  &ea          &moea MAC   &ea                &ea                                                   &ea            &ea          &moea MAC   &ea                &ea
+&ea  &cmkpea MB1  &moea SCR   &hmkpea LSHFT MB2  &ea                                                   &ea            &cmkpea MB1  &moea SCR   &hmkpea RSHFT MB2  &ea
+&ea  &mkpea MB4   &mkpea MB3  &hmkpea LCTRL MB5  &ea             &kp LANG2             &ea             &ea            &mkpea MB4   &mkpea MB3  &hmkpea RCTRL MB5  &ea
+&ea  &ea                                         &ltea MOV SPACE &mtea LSHFT LANG1     &ltea LOW BSPC  &ltea RAI RET                           &ea                &ea
             >;
         };
 
