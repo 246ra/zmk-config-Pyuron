@@ -19,14 +19,13 @@
 #define ONI 2
 #define NAG 3
 #define AMO 4
-#define LMO 5
-#define MOU 6
-#define MOV 7
-#define LOW 8
-#define RAI 9
-#define MAC 10
-#define SET 11
-#define SCR 12
+#define MOU 5
+#define MOV 6
+#define LOW 7
+#define RAI 8
+#define MAC 9
+#define SET 10
+#define SCR 11
 
 // layerの設定
 &lt {
@@ -88,10 +87,11 @@
         >;
     };
     snipe {
-        layers = <LMO>;
+        layers = <MOV>;
         input-processors = <
             &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)
             &zip_xy_scaler 1 2
+            &zip_temp_layer AMO 10000
         >;
     };
     hiscroller_R {
@@ -605,15 +605,6 @@
 &moea LMO  &cmkpea MB1  &moea SCR   &hmkpea LSHFT MB2  &ea                                                   &ea            &cmkpea MB1  &moea SCR   &hmkpea RSHFT MB2  &moea LMO
 &ea        &mkpea MB4   &mkpea MB3  &hmkpea LCTRL MB5  &ea             &kp LANG2             &ea             &ea            &mkpea MB4   &mkpea MB3  &hmkpea RCTRL MB5  &ea
 &ea        &ea                                         &ltea MOV SPACE &mtea LSHFT LANG1     &ltea LOW BSPC  &ltea RAI RET                           &ea                &ea
-            >;
-        };
-
-        LMOUSE {
-            bindings = <
-&none  &none        &none       &none              &none                   &none  &none        &none       &none              &none
-&none  &cmkpea MB1  &none       &hmkpea LSHFT MB2  &none                   &none  &cmkpea MB1  &none       &hmkpea LSHFT MB2  &none
-&none  &mkpea MB4   &mkpea MB3  &hmkpea LCTRL MB5  &none  &none     &none  &none  &mkpea MB4   &mkpea MB3  &hmkpea LCTRL MB5  &none
-&none  &none                                       &none  &none     &none  &none                           &none              &none
             >;
         };
 
