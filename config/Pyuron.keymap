@@ -611,9 +611,9 @@
         CLICK {
             bindings = <
 &trans  &trans      &trans  &trans  &trans                     &trans  &trans      &trans  &trans  &trans
-&trans  &mkpea MB1  &trans  &trans  &trans  &trans     &trans  &trans  &mkpea MB1  &trans  &trans  &trans
+&trans  &mkpea MB1  &trans  &trans  &trans                     &trans  &mkpea MB1  &trans  &trans  &trans
 &trans  &trans      &trans  &trans  &trans  &trans     &trans  &trans  &trans      &trans  &trans  &trans
-&trans  &trans      &trans  &trans  &trans  &trans     &trans  &trans                              &trans
+&trans  &trans                      &trans  &trans     &trans  &trans                      &trans  &trans
             >;
         };
 
