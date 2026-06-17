@@ -19,12 +19,13 @@
 #define ONI 2
 #define NAG 3
 #define AMO 4
-#define MOU 5
-#define MOV 6
-#define LOW 7
-#define RAI 8
-#define MAC 9
-#define SET 10
+#define CLI 5
+#define MOU 6
+#define MOV 7
+#define LOW 8
+#define RAI 9
+#define MAC 10
+#define SET 11
 
 // layerの設定
 &lt {
@@ -102,7 +103,7 @@
         >;
     }; 
     scroller {
-        layers = <MAC>;
+        layers = <CLI>;
         input-processors = <
             &zip_xy_to_scroll_mapper
             &zip_scroll_transform INPUT_TRANSFORM_XY_SWAP
@@ -363,7 +364,7 @@
                 <&macro_param_1to1 &mkp MACRO_PLACEHOLDER>,
                 <&macro_tap>,
                 <&ea>,
-                <&sl_150 AMO>;
+                <&sl_150 CLI>;
         };
         // マウス入力
         mkpea: mkp_exit_AML {
@@ -600,10 +601,19 @@
 
         AMOUSE {
              bindings = <
-&ea  &ea          &moea MAC   &ea                &ea                                                   &ea            &ea          &moea MAC   &ea                &ea
-&ea  &cmkpea MB1  &moea SCR   &hmkpea LSHFT MB2  &ea                                                   &ea            &cmkpea MB1  &moea SCR   &hmkpea RSHFT MB2  &ea
+&ea  &ea          &moea SET   &ea                &ea                                                   &ea            &ea          &moea SET   &ea                &ea
+&ea  &cmkpea MB1  &moea CLI   &hmkpea LSHFT MB2  &ea                                                   &ea            &cmkpea MB1  &moea CLI   &hmkpea RSHFT MB2  &ea
 &ea  &mkpea MB4   &mkpea MB3  &hmkpea LCTRL MB5  &ea             &kp LANG2             &ea             &ea            &mkpea MB4   &mkpea MB3  &hmkpea RCTRL MB5  &ea
 &ea  &ea                                         &ltea MOV SPACE &mtea LSHFT LANG1     &ltea LOW BSPC  &ltea RAI RET                           &ea                &ea
+            >;
+        };
+
+        CLICK {
+            bindings = <
+&trans  &trans      &trans  &trans  &trans                     &trans  &trans      &trans  &trans  &trans
+&trans  &mkpea MB1  &trans  &trans  &trans  &trans     &trans  &trans  &mkpea MB1  &trans  &trans  &trans
+&trans  &trans      &trans  &trans  &trans  &trans     &trans  &trans  &trans      &trans  &trans  &trans
+&trans  &trans      &trans  &trans  &trans  &trans     &trans  &trans                              &trans
             >;
         };
 
