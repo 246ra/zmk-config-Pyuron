@@ -103,7 +103,7 @@
         >;
     }; 
     scroller {
-        layers = <CLI>;
+        layers = <MAC>;
         input-processors = <
             &zip_xy_to_scroll_mapper
             &zip_scroll_transform INPUT_TRANSFORM_XY_SWAP
@@ -602,7 +602,7 @@
         AMOUSE {
              bindings = <
 &ea  &ea          &moea SET   &ea                &ea                                                   &ea            &ea          &moea SET   &ea                &ea
-&ea  &cmkpea MB1  &moea CLI   &hmkpea LSHFT MB2  &ea                                                   &ea            &cmkpea MB1  &moea CLI   &hmkpea RSHFT MB2  &ea
+&ea  &cmkpea MB1  &moea MAC   &hmkpea LSHFT MB2  &ea                                                   &ea            &cmkpea MB1  &moea MAC   &hmkpea RSHFT MB2  &ea
 &ea  &mkpea MB4   &mkpea MB3  &hmkpea LCTRL MB5  &ea             &kp LANG2             &ea             &ea            &mkpea MB4   &mkpea MB3  &hmkpea RCTRL MB5  &ea
 &ea  &ea                                         &ltea MOV SPACE &mtea LSHFT LANG1     &ltea LOW BSPC  &ltea RAI RET                           &ea                &ea
             >;
