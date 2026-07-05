@@ -86,6 +86,12 @@
         &zip_temp_layer AMO 10000
         &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)
     >;
+    mouse_L {
+       layers = <FMO>;
+       input-processors = <
+           &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)
+       >;
+    };
     sound {
         layers = <RAI>;
         input-processors = <
@@ -157,15 +163,27 @@
             layers = <QWE WAK ONI>;
         };
         // マウスレイヤーに移動
-        combo_fix_mouse_on {
+        combo_fix_mouse_r_on {
             timeout-ms = <30>;
-            key-positions = <6 7 8>, <1 2 3>;
+            key-positions = <6 7 8>;
             bindings = <&to FMO>;
             layers = <QWE WAK ONI>;
         };
-        combo_fix_mouse_on {
+        combo_fix_mouse_r_off {
             timeout-ms = <30>;
-            key-positions = <28 29 30>, <21 22 23>;
+            key-positions = <28 29 30>;
+            bindings = <&to QWE>;
+            layers = <FMO>;
+        };
+        combo_fix_mouse_l_on {
+            timeout-ms = <30>;
+            key-positions = <1 2 3>;
+            bindings = <&to FMO>;
+            layers = <QWE WAK ONI>;
+        };
+        combo_fix_mouse_l_off {
+            timeout-ms = <30>;
+            key-positions = <21 22 23>;
             bindings = <&to QWE>;
             layers = <FMO>;
         };
