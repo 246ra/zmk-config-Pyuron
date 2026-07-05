@@ -29,14 +29,14 @@
 
 // layerの設定
 &lt {
-    flavor = "tap-preferred"; // タップ優先
+    flavor = "balanced"; // タップ優先
     tapping-term-ms = <200>;  // tap < ms < hold 扱いになる
     quick-tap-ms = <170>;     // 秒数内にダブルタップすることで連続入力
     // require-prior-idle-ms = <125>;   // 修飾キー以外のキーと同時に押された場合（動作ではありません）、ホールドタップは常にタップに変換
 };
 // modの設定
 &mt {
-    flavor = "tap-preferred"; // タップ優先
+    flavor = "balanced"; // タップ優先
     tapping-term-ms = <200>;  // tap < ms < hold 扱いになる
     quick-tap-ms = <170>;     // 秒数内にダブルタップすることで連続入力
     // require-prior-idle-ms = <125>;   // 修飾キー以外のキーと同時に押された場合（動作ではありません）、ホールドタップは常にタップに変換
@@ -421,9 +421,9 @@
         hmkpea: mkp_on_hold {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            quick-tap-ms = <140>;
-            tapping-term-ms = <150>;
-            flavor = "tap-preferred";
+            quick-tap-ms = <170>;
+            tapping-term-ms = <180>;
+            flavor = "balanced";
             bindings = <&kp>, <&mkpea>;
         };
         // レイヤー移動後にAMLを抜ける
@@ -431,27 +431,27 @@
             compatible = "zmk,behavior-hold-tap";
             bindings = <&moea>, <&kpea>;
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <180>;
             quick-tap-ms = <170>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
         };
         // レイヤー移動後にAMLを抜ける
         mtea: mt_exit_AML {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&moea>, <&kpea>;
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
+            tapping-term-ms = <180>;
+            flavor = "balanced";
             quick-tap-ms = <170>;
         };
         // HRMの設定
         hrml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            require-prior-idle-ms = <125>;
+            require-prior-idle-ms = <150>;
             quick-tap-ms = <170>;
             tapping-term-ms = <200>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 26 27 28 29 30 31 36 37>; // List of keys on the right side of the keyboard
             hold-trigger-on-release;
@@ -459,32 +459,34 @@
         hrmr: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            require-prior-idle-ms = <125>;
+            require-prior-idle-ms = <150>;
             quick-tap-ms = <170>;
             tapping-term-ms = <200>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 25 34 35>;
-            //hold-trigger-on-release;
+            hold-trigger-on-release;
         };
         // HRMでcaps切替える
         hrmc: qickly_homerow_mods_caps {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            require-prior-idle-ms = <125>;
+            require-prior-idle-ms = <150>;
             tapping-term-ms = <200>;
             quick-tap-ms = <170>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&kp>, <&caps_word>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 26 27 28 29 30 31 36 37>;
+            hold-trigger-on-release;
         };
         //mod-tap(薙刀式)の設定
         nltl: nagi_layer_tap_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            require-prior-idle-ms = <125>;
+            require-prior-idle-ms = <150>;
             tapping-term-ms = <200>;
             quick-tap-ms = <170>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&mo>, <&ng>;
             hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 26 27 28 29 30 31 36 37>;
             hold-trigger-on-release;
@@ -492,10 +494,10 @@
         nltr: nagi_layer_tap_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            require-prior-idle-ms = <125>;
+            require-prior-idle-ms = <150>;
             tapping-term-ms = <200>;
             quick-tap-ms = <170>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&mo>, <&ng>;
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 25 34 35 >;
             hold-trigger-on-release;
@@ -504,10 +506,10 @@
         kltl: key_layer_tap_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            require-prior-idle-ms = <125>;
+            require-prior-idle-ms = <150>;
             tapping-term-ms = <200>;
             quick-tap-ms = <170>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&mo>, <&kp>;
             hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 26 27 28 29 30 31 36 37>;
             hold-trigger-on-release;
@@ -515,10 +517,10 @@
         kltr: key_layer_tap_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            require-prior-idle-ms = <125>;
+            require-prior-idle-ms = <150>;
             tapping-term-ms = <200>;
             quick-tap-ms = <170>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&mo>, <&kp>;
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 25 34 35>;
             hold-trigger-on-release;
@@ -579,10 +581,10 @@
 
         default_layer {
             bindings = <
-&kp Q         &kp W          &kp E          &kp R         &kp T                                             &kp Y        &kp U         &kp I            &kp O          &kp P
-&hrml LGUI A  &hrml LSHFT S  &hrml LCTRL D  &hrml LALT F  &kp G                                             &kp H        &hrmr RALT J  &hrmr RCTRL K    &hrmr RSHFT L  &hjseco
-&kltl MOU Z   &kltl MAC X    &kltl RAI C    &kltl LOW V   &kp B          &lt SET LANG2       &lt SET RIGHT  &kp N        &kltr LOW M   &kltr RAI COMMA  &kltr MAC DOT  &kltr MOU FSLH
-&mo MOU       &kp LCTRL                                   &lt MOV SPACE  &mt LSHFT LANG1     &lt LOW BSPC   &lt RAI RET                                 &none          &mo MOU
+&kp Q         &kp W          &kp E          &kp R         &kp T                                            &kp Y        &kp U         &kp I            &kp O          &kp P
+&hrml LGUI A  &hrml LSHFT S  &hrml LCTRL D  &hrml LALT F  &kp G                                            &kp H        &hrmr RALT J  &hrmr RCTRL K    &hrmr RSHFT L  &hjseco
+&kltl MOU Z   &kltl MAC X    &kltl RAI C    &kltl LOW V   &kp B          &kp LANG2           &kp SQT       &kp N        &kltr LOW M   &kltr RAI COMMA  &kltr MAC DOT  &kltr MOU FSLH
+&mo MOU       &kp LCTRL                                   &lt MOV SPACE  &mt LSHFT LANG1     &lt LOW BSPC  &lt RAI RET                                 &none          &mo MOU
             >;
         };
 
@@ -590,7 +592,7 @@
             bindings = <
 &kp Q           &kp P            &kp R          &kp D          &kp C                                             &kp B        &kp K         &kp U          &kp Y          &kp X
 &hrml LGUI A    &hrml LSHFT T    &hrml LCTRL N  &hrml LALT S   &kp W                                             &kp M        &hrmr RALT H  &hrmr RCTRL E  &hrmr RSHFT I  &hrmr RGUI O
-&kltl MOU FSLH  &kltl MAC COMMA  &kltl RAI L    &kltl LOW G    &kp J          &lt SET LANG2       &lt SET RIGHT  &kp F        &kltr LOW V   &wjseco        &kltr MAC Z    &kltr MOU DOT
+&kltl MOU FSLH  &kltl MAC COMMA  &kltl RAI L    &kltl LOW G    &kp J          &kp LANG2           &kp SQT        &kp F        &kltr LOW V   &wjseco        &kltr MAC Z    &kltr MOU DOT
 &mo MOU         &kp LCTRL                                      &lt MOV SPACE  &mt LSHFT LANG1     &lt LOW BSPC   &lt RAI RET                               &none          &mo MOU
             >;
         };
@@ -600,7 +602,7 @@
             bindings = <
 &kp Q         &kp L          &kp U          &kp COMMA      &kp DOT                                           &kp F        &kp W         &kp R          &kp Y          &kp P
 &hrml LGUI E  &hrml LSHFT I  &hrml LCTRL A  &hrml LALT O   &kp MINUS                                         &kp K        &hrmr RALT T  &hrmr RCTRL N  &hrmr RSHFT S  &hrmr RGUI H
-&kltl MOU Z   &kltl MAC X    &kltl LOW C    &kltl RAI V    &jseco         &lt SET LANG2       &lt SET RIGHT  &kp G        &kltr LOW D   &kltr RAI M    &kltr MAC J    &kltr MOU B
+&kltl MOU Z   &kltl MAC X    &kltl LOW C    &kltl RAI V    &jseco         &kp LANG2           &kp SQT        &kp G        &kltr LOW D   &kltr RAI M    &kltr MAC J    &kltr MOU B
 &mo MOU       &kp LCTRL                                    &lt MOV SPACE  &mt LSHFT LANG1     &lt LOW BSPC   &lt RAI RET                               &none          &mo MOU
             >;
         };
@@ -609,7 +611,7 @@
             bindings = <
 &ng Q        &ng W        &ng E        &ng R        &ng T                                &ng Y      &ng U        &ng I            &ng O          &ng P
 &ng A        &ng S        &ng D        &ng F        &ng G                                &ng H      &ng J        &ng K            &ng L          &ng SEMI
-&nltl MOU Z  &nltl MAC X  &nltl RAI C  &nltl LOW V  &ng B      &mo SET     &mo SET       &ng N      &nltr LOW M  &nltr RAI COMMA  &nltr MAC DOT  &nltr MOU FSLH
+&nltl MOU Z  &nltl MAC X  &nltl RAI C  &nltl LOW V  &ng B      &none       &none         &ng N      &nltr LOW M  &nltr RAI COMMA  &nltr MAC DOT  &nltr MOU FSLH
 &mo MOU      &none                                  &ng SPACE  &mo MOV     &lt LOW BSPC  &ng ENTER                                &none          &mo MOU
             >;
         };
@@ -618,7 +620,7 @@
              bindings = <
 &ea         &ea          &moea SET   &ea         &ea                                                   &ea            &ea          &moea SET   &ea         &ea
 &mdea LSHFT &cmkpea MB1  &moea MAC   &mkpea MB2  &ea                                                   &ea            &cmkpea MB1  &moea MAC   &mkpea MB2  &mdea RSHFT
-&mdea LCTRL &mkpea MB4   &mkpea MB3  &mkpea MB5  &ea             &kp LANG2             &ea             &ea            &mkpea MB4   &mkpea MB3  &mkpea MB5  &mdea RCTRL
+&mdea LCTRL &mkpea MB4   &mkpea MB3  &mkpea MB5  &ea             &kpea LANG2           &ea             &ea            &mkpea MB4   &mkpea MB3  &mkpea MB5  &mdea RCTRL
 &ea         &ea                                  &ltea MOV SPACE &mtea LSHFT LANG1     &ltea LOW BSPC  &ltea RAI RET                           &ea         &ea
             >;
         };
