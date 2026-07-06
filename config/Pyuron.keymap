@@ -42,6 +42,12 @@
     quick-tap-ms = <170>;     // 秒数内にダブルタップすることで連続入力
     // require-prior-idle-ms = <125>;   // 修飾キー以外のキーと同時に押された場合（動作ではありません）、ホールドタップは常にタップに変換
 };
+&mo {
+    flavor = "balanced"; // タップ優先
+    tapping-term-ms = <200>;  // tap < ms < hold 扱いになる
+    quick-tap-ms = <170>;     // 秒数内にダブルタップすることで連続入力
+    // require-prior-idle-ms = <125>;   // 修飾キー以外のキーと同時に押された場合（動作ではありません）、ホールドタップは常にタップに変換
+};
 
 // トラックボールジェスチャ
 / {
@@ -655,7 +661,7 @@
 &ea         &ea          &moea SET   &ea         &ea                                             &ea            &ea          &moea SET   &ea         &ea
 &mdea LSHFT &cmkpea MB1  &moea MAC   &mkpea MB2  &ea                                             &ea            &cmkpea MB1  &moea MAC   &mkpea MB2  &mdea RSHFT
 &mdea LCTRL &mkpea MB4   &mkpea MB3  &mkpea MB5  &ea             &kpea LANG2     &ea             &ea            &mkpea MB4   &mkpea MB3  &mkpea MB5  &mdea RCTRL
-&ea         &ea                                  &ltea MOV SPACE &moea LSHFT     &ltea LOW BSPC  &ltea RAI RET                           &ea         &ea
+&ea         &ea                                  &ltea MOV SPACE &kpea LSHFT     &ltea LOW BSPC  &ltea RAI RET                           &ea         &ea
             >;
         };
 
