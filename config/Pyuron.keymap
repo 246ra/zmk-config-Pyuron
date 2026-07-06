@@ -627,29 +627,29 @@
 
         default_layer {
             bindings = <
-&kp Q         &kp W          &kp E          &kp R         &kp T                                            &kp Y        &kp U         &kp I            &kp O          &kp P
-&hrml LGUI A  &hrml LSHFT S  &hrml LCTRL D  &hrml LALT F  &kp G                                            &kp H        &hrmr RALT J  &hrmr RCTRL K    &hrmr RSHFT L  &hjseco
-&kltl MOU Z   &kltl MAC X    &kltl RAI C    &kltl LOW V   &kp B          &kp LANG2           &kp SQT       &kp N        &kltr LOW M   &kltr RAI COMMA  &kltr MAC DOT  &kltr MOU FSLH
-&mo MOU       &kp LCTRL                                   &lt MOV SPACE  &mt LSHFT LANG1     &lt LOW BSPC  &lt RAI RET                                 &none          &mo MOU
+&kp Q         &kp W          &kp E          &kp R         &kp T                                       &kp Y        &kp U         &kp I            &kp O          &kp P
+&hrml LGUI A  &hrml LSHFT S  &hrml LCTRL D  &hrml LALT F  &kp G                                       &kp H        &hrmr RALT J  &hrmr RCTRL K    &hrmr RSHFT L  &hjseco
+&kltl MOU Z   &kltl MAC X    &kltl RAI C    &kltl LOW V   &kp B          &kp LANG2      &kp SQT       &kp N        &kltr LOW M   &kltr RAI COMMA  &kltr MAC DOT  &kltr MOU FSLH
+&mo MOU       &kp LCTRL                                   &lt MOV SPACE  &kp LSHFT      &lt LOW BSPC  &lt RAI RET                                 &none          &mo MOU
             >;
         };
 
         WAKASAGI {
             bindings = <
-&kp Q           &kp P            &kp R          &kp D          &kp C                                             &kp B        &kp K         &kp U          &kp Y          &kp X
-&hrml LGUI A    &hrml LSHFT T    &hrml LCTRL N  &hrml LALT S   &kp W                                             &kp M        &hrmr RALT H  &hrmr RCTRL E  &hrmr RSHFT I  &hrmr RGUI O
-&kltl MOU FSLH  &kltl MAC COMMA  &kltl RAI L    &kltl LOW G    &kp J          &kp LANG2           &kp SQT        &kp F        &kltr LOW V   &wjseco        &kltr MAC Z    &kltr MOU DOT
-&mo MOU         &kp LCTRL                                      &lt MOV SPACE  &mt LSHFT LANG1     &lt LOW BSPC   &lt RAI RET                               &none          &mo MOU
+&kp Q           &kp P            &kp R          &kp D          &kp C                                        &kp B        &kp K         &kp U          &kp Y          &kp X
+&hrml LGUI A    &hrml LSHFT T    &hrml LCTRL N  &hrml LALT S   &kp W                                        &kp M        &hrmr RALT H  &hrmr RCTRL E  &hrmr RSHFT I  &hrmr RGUI O
+&kltl MOU FSLH  &kltl MAC COMMA  &kltl RAI L    &kltl LOW G    &kp J          &kp LANG2      &kp SQT        &kp F        &kltr LOW V   &wjseco        &kltr MAC Z    &kltr MOU DOT
+&mo MOU         &kp LCTRL                                      &lt MOV SPACE  &kp LSHFT      &lt LOW BSPC   &lt RAI RET                               &none          &mo MOU
             >;
         };
 
 
         OONISHI {
             bindings = <
-&kp Q         &kp L          &kp U          &kp COMMA      &kp DOT                                           &kp F        &kp W         &kp R          &kp Y          &kp P
-&hrml LGUI E  &hrml LSHFT I  &hrml LCTRL A  &hrml LALT O   &kp MINUS                                         &kp K        &hrmr RALT T  &hrmr RCTRL N  &hrmr RSHFT S  &hrmr RGUI H
-&kltl MOU Z   &kltl MAC X    &kltl LOW C    &kltl RAI V    &jseco         &kp LANG2           &kp SQT        &kp G        &kltr LOW D   &kltr RAI M    &kltr MAC J    &kltr MOU B
-&mo MOU       &kp LCTRL                                    &lt MOV SPACE  &mt LSHFT LANG1     &lt LOW BSPC   &lt RAI RET                               &none          &mo MOU
+&kp Q         &kp L          &kp U          &kp COMMA      &kp DOT                                      &kp F        &kp W         &kp R          &kp Y          &kp P
+&hrml LGUI E  &hrml LSHFT I  &hrml LCTRL A  &hrml LALT O   &kp MINUS                                    &kp K        &hrmr RALT T  &hrmr RCTRL N  &hrmr RSHFT S  &hrmr RGUI H
+&kltl MOU Z   &kltl MAC X    &kltl LOW C    &kltl RAI V    &jseco         &kp LANG2      &kp SQT        &kp G        &kltr LOW D   &kltr RAI M    &kltr MAC J    &kltr MOU B
+&mo MOU       &kp LCTRL                                    &lt MOV SPACE  &kp LSHFT      &lt LOW BSPC   &lt RAI RET                               &none          &mo MOU
             >;
         };
 
@@ -664,10 +664,10 @@
 
         AMOUSE {
              bindings = <
-&ea         &ea          &moea SET   &ea         &ea                                                   &ea            &ea          &moea SET   &ea         &ea
-&mdea LSHFT &cmkpea MB1  &moea MAC   &mkpea MB2  &ea                                                   &ea            &cmkpea MB1  &moea MAC   &mkpea MB2  &mdea RSHFT
-&mdea LCTRL &mkpea MB4   &mkpea MB3  &mkpea MB5  &ea             &kpea LANG2           &ea             &ea            &mkpea MB4   &mkpea MB3  &mkpea MB5  &mdea RCTRL
-&ea         &ea                                  &ltea MOV SPACE &mtea LSHFT LANG1     &ltea LOW BSPC  &ltea RAI RET                           &ea         &ea
+&ea         &ea          &moea SET   &ea         &ea                                              &ea            &ea          &moea SET   &ea         &ea
+&mdea LSHFT &cmkpea MB1  &moea MAC   &mkpea MB2  &ea                                              &ea            &cmkpea MB1  &moea MAC   &mkpea MB2  &mdea RSHFT
+&mdea LCTRL &mkpea MB4   &mkpea MB3  &mkpea MB5  &ea             &kpea LANG2      &ea             &ea            &mkpea MB4   &mkpea MB3  &mkpea MB5  &mdea RCTRL
+&ea         &ea                                  &ltea MOV SPACE &kpea LSHFT      &ltea LOW BSPC  &ltea RAI RET                           &ea         &ea
             >;
         };
 
