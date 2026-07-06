@@ -85,7 +85,7 @@
     mouse_L {
        layers = <FMO>;
        input-processors = <
-           &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)
+           &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)
        >;
     };
 };
@@ -557,8 +557,8 @@
             quick-tap-ms = <170>;
             flavor = "balanced";
             bindings = <&mo>, <&kp>;
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 26 27 28 29 30 31 36 37>;
-            hold-trigger-on-release;
+            //hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 26 27 28 29 30 31 36 37>;
+            //hold-trigger-on-release;
         };
         kltr: key_layer_tap_right {
             compatible = "zmk,behavior-hold-tap";
@@ -568,8 +568,8 @@
             quick-tap-ms = <170>;
             flavor = "balanced";
             bindings = <&mo>, <&kp>;
-            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 25 34 35>;
-            hold-trigger-on-release;
+            //hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 25 34 35>;
+            //hold-trigger-on-release;
         }; 
         // HRMで記号の入力を指定
         hjseco: homerow_mods_jis_semi_colon {
@@ -736,10 +736,10 @@
 
         SETUP {
             bindings = <
-&kp C_MUTE    &kp C_PP    &none         &none     &none                                    &kp CAPS    &none     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2
-&kp C_VOL_UP  &kp C_NEXT  &kp C_BRI_UP  &ind_bat  &none                                    &kp KP_NUM  &ind_bat  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5
-&kp C_VOL_DN  &kp C_PREV  &kp C_BRI_DN  &ind_con  &sys_reset  &bootloader     &bootloader  &kp SLCK    &ind_con  &none         &bt BT_CLR    &bt BT_CLR_ALL
-&none         &none                               &none       &none           &none        &none                               &none         &none
+&kp C_MUTE    &kp C_PP    &none         &none     &kp LCAPS                               &kp CAPS    &none     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2
+&kp C_VOL_UP  &kp C_NEXT  &kp C_BRI_UP  &ind_bat  &kp LNLCK                               &kp KP_NUM  &ind_bat  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5
+&kp C_VOL_DN  &kp C_PREV  &kp C_BRI_DN  &ind_con  &kp LSLCK  &bootloader     &bootloader  &kp SLCK    &ind_con  &none         &bt BT_CLR    &bt BT_CLR_ALL
+&sys_reset    &none                               &none      &none           &none        &none                               &none         &sys_reset
             >;
         };
     };
