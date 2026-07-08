@@ -30,17 +30,10 @@
 
 // layerの設定
 &lt {
-    flavor = "balanced"; // タップ優先
+    flavor = "hold-preferred"; // タップ優先
     tapping-term-ms = <200>;  // tap < ms < hold 扱いになる
     quick-tap-ms = <170>;     // 秒数内にダブルタップすることで連続入力
-    // require-prior-idle-ms = <125>;   // 修飾キー以外のキーと同時に押された場合（動作ではありません）、ホールドタップは常にタップに変換
-};
-// modの設定
-&mt {
-    flavor = "balanced"; // タップ優先
-    tapping-term-ms = <200>;  // tap < ms < hold 扱いになる
-    quick-tap-ms = <170>;     // 秒数内にダブルタップすることで連続入力
-    // require-prior-idle-ms = <125>;   // 修飾キー以外のキーと同時に押された場合（動作ではありません）、ホールドタップは常にタップに変換
+    require-prior-idle-ms = <0>;   // 修飾キー以外のキーと同時に押された場合（動作ではありません）、ホールドタップは常にタップに変換
 };
 
 // トラックボールジェスチャ
@@ -511,7 +504,7 @@
             tapping-term-ms = <200>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 27 28 29 30 31>; // List of keys on the right side of the keyboard
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 27 28 29 30 31 34 35 36 37>; // List of keys on the right side of the keyboard
             hold-trigger-on-release;
         };
         hrmr: homerow_mods_right {
@@ -522,7 +515,7 @@
             tapping-term-ms = <200>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 34 35 36 37>;
             hold-trigger-on-release;
         };
         // HRMでcaps切替える
@@ -534,7 +527,7 @@
             quick-tap-ms = <170>;
             flavor = "balanced";
             bindings = <&kp>, <&caps_word>;
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 27 28 29 30 31>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 27 28 29 30 31 34 35 36 37>;
             hold-trigger-on-release;
         };
         //mod-tap(薙刀式)の設定
@@ -546,7 +539,7 @@
             quick-tap-ms = <170>;
             flavor = "balanced";
             bindings = <&mo>, <&ng>;
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 27 28 29 30 31>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 27 28 29 30 31 34 35 36 37>;
             hold-trigger-on-release;
         };
         nltr: nagi_layer_tap_right {
@@ -557,7 +550,7 @@
             quick-tap-ms = <170>;
             flavor = "balanced";
             bindings = <&mo>, <&ng>;
-            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 34 35 36 37>;
             hold-trigger-on-release;
         };
         // layerの設定(文字を入力する場合)
@@ -569,7 +562,7 @@
             quick-tap-ms = <170>;
             flavor = "balanced";
             bindings = <&mo>, <&kp>;
-            //hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 27 28 29 30 31>;
+            //hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 27 28 29 30 31 34 35 36 37>;
             //hold-trigger-on-release;
         };
         kltr: key_layer_tap_right {
@@ -580,7 +573,7 @@
             quick-tap-ms = <170>;
             flavor = "balanced";
             bindings = <&mo>, <&kp>;
-            //hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
+            //hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 34 35 36 37>;
             //hold-trigger-on-release;
         }; 
         // HRMで記号の入力を指定
