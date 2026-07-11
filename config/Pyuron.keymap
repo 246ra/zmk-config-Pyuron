@@ -716,7 +716,7 @@
         LOWER {
             bindings = <
 &kp LS(N1)  &kp LBKT   &kp LS(N3)    &kp LS(N4)    &kp LS(N5)                        &kp EQUAL  &kp LS(N6)  &kp LS(SQT)  &kp LS(N8)    &kp LS(N9)
-&kp LBRC    &kp UNDER  &kp MINUS     &kp BSLH      &kp FSLH                          &kp LT     &kp LS(N8)  &kp RBKT     &kp LS(RBKT)  &kp AMPS
+&kp LBRC    &kp UNDER  &kp MINUS     &kp INT1      &kp FSLH                          &kp LT     &kp LS(N8)  &kp RBKT     &kp LS(RBKT)  &kp AMPS
 &kp PLUS    &kp COLON  &kp LS(INT1)  &kp LS(INT3)  &kp QMARK     &none        &none  &kp GT     &kp LS(N9)  &jrbrb       &kp LS(NUHS)  &jsqdq
 &none       &none                                  &kp LS(FSLH)  &kp SQT      &none  &none                               &none         &none
             >;
@@ -726,7 +726,7 @@
             bindings = <
 &kp F1      &kp F2       &kp F3        &kp F4       &kp F5                                &kp F6  &kp F7    &kp F8    &kp F9   &kp F10
 &kp N1      &kp N2       &kp N3        &kp N4       &kp N5                                &kp N6  &kp N7    &kp N8    &kp N9   &kp N0
-&kp COLON   &kp MINUS    &kp LS(SQT)   &kp FSLH     &kp LS(N5)     &none           &none  &none   &kp BSLH  &kp SEMI  &kp F11  &kp F12
+&kp COLON   &kp MINUS    &kp LS(SQT)   &kp FSLH     &kp LS(N5)     &none           &none  &none   &kp INT1  &kp AMPS  &kp F11  &kp F12
 &none       &none                                   &lt MAC UNDER  &lt SET DOT     &none  &none                       &none    &none
             >;
         };
