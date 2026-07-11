@@ -706,7 +706,7 @@
 
         MOVE {
             bindings = <
-&kp ESC         &kp INS              &kp INT5         &kp INT4          &none                                  &none          &kp_K_APP  &kp BSPC   &kp DEL    &kp LC(BSPC)
+&kp ESC         &kp INS              &kp INT5         &kp INT4          &none                                  &none          &kp K_APP  &kp BSPC   &kp DEL    &kp LC(BSPC)
 &hrml LGUI TAB  &hrml LSHFT LS(TAB)  &hrml LCTRL ESC  &hrml LALT GRAVE  &caps_word                             &kp LEFT       &kp DOWN   &kp UP     &kp RIGHT  &kp RET
 &kp PSCRN       &kp LG(LS(S))        &kp LC(T)        &kp LC(I)         &kp LC(O)  &kp LSHFT      &kp RGUI     &kp HOME       &kp PG_DN  &kp PG_UP  &kp END    &kp GRAVE
 &none           &none                                                   &none      &none          &lt SET DEL  &lt MAC SPACE                        &none      &none
