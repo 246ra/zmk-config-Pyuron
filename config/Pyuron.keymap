@@ -228,13 +228,13 @@
             layers = <QWE WAK ONI>;
         };
         combo_ent {
-            timeout-ms = <A0>;
+            timeout-ms = <10>;
             key-positions = <29 30>;
             bindings = <&kp RET>;    
             layers = <QWE WAK ONI>;
         };
         combo_esc {
-            timeout-ms = <20>;
+            timeout-ms = <10>;
             key-positions = <21 22>;
             bindings = <&kp ESC>;
             layers = <QWE WAK ONI>;
