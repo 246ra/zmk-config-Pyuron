@@ -204,39 +204,39 @@
             layers = <QWE WAK ONI>;
         };
         combo_caps {
-            timeout-ms = <20>;
+            timeout-ms = <10>;
             key-positions = <13 16>;
             bindings = <&caps_word>;
             layers = <QWE WAK ONI>;
         };
         combo_tab {
-            timeout-ms = <20>;
+            timeout-ms = <10>;
             key-positions = <11 12>;
             bindings = <&kp TAB>;
             layers = <QWE WAK ONI>;
         };
         combo_bs {
-            timeout-ms = <20>;
+            timeout-ms = <10>;
             key-positions = <7 8>;
-            bindings = <&kp TAB>;
+            bindings = <&kp BSPC>;
             layers = <QWE WAK ONI>;
         };
         combo_del {
-            timeout-ms = <20>;
+            timeout-ms = <10>;
             key-positions = <6 7>;
-            bindings = <&kp TAB>;
+            bindings = <&kp DEL>;
             layers = <QWE WAK ONI>;
         };
         combo_ent {
-            timeout-ms = <20>;
+            timeout-ms = <A0>;
             key-positions = <29 30>;
-            bindings = <&kp TAB>;
+            bindings = <&kp RET>;    
             layers = <QWE WAK ONI>;
         };
         combo_esc {
             timeout-ms = <20>;
             key-positions = <21 22>;
-            bindings = <&kp TAB>;
+            bindings = <&kp ESC>;
             layers = <QWE WAK ONI>;
         };
         combo_prn {
