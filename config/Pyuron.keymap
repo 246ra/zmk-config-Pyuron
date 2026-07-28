@@ -215,6 +215,30 @@
             bindings = <&kp TAB>;
             layers = <QWE WAK ONI>;
         };
+        combo_bs {
+            timeout-ms = <20>;
+            key-positions = <7 8>;
+            bindings = <&kp TAB>;
+            layers = <QWE WAK ONI>;
+        };
+        combo_del {
+            timeout-ms = <20>;
+            key-positions = <6 7>;
+            bindings = <&kp TAB>;
+            layers = <QWE WAK ONI>;
+        };
+        combo_ent {
+            timeout-ms = <20>;
+            key-positions = <29 30>;
+            bindings = <&kp TAB>;
+            layers = <QWE WAK ONI>;
+        };
+        combo_esc {
+            timeout-ms = <20>;
+            key-positions = <21 22>;
+            bindings = <&kp TAB>;
+            layers = <QWE WAK ONI>;
+        };
         combo_prn {
             timeout-ms = <20>;
             key-positions = <16 17>;
@@ -245,27 +269,15 @@
             bindings = <&RAW>;
             layers = <LOW>;
         };
-        combo_RAI {
-            timeout-ms = <20>;
-            key-positions = <30 31>;
-            bindings = <&mo RAI>;
-            layers = <QWE WAK ONI NAG>;
-        };
-        combo_RAI2 {
-            timeout-ms = <20>;
-            key-positions = <20 21>;
-            bindings = <&mo RAI>;
-            layers = <QWE WAK ONI NAG>;
-        };
         combo_SET {
             timeout-ms = <20>;
-            key-positions = <29 30>;
+            key-positions = <28 29>;
             bindings = <&mo SET>;
             layers = <QWE WAK ONI NAG>;
         };
         combo_SET2 {
             timeout-ms = <20>;
-            key-positions = <21 22>;
+            key-positions = <22 23>;
             bindings = <&mo SET>;
             layers = <QWE WAK ONI NAG>;
         };
@@ -547,7 +559,7 @@
         nltl: nagi_layer_tap_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            require-prior-idle-ms = <160>;
+            require-prior-idle-ms = <180>;
             tapping-term-ms = <200>;
             quick-tap-ms = <170>;
             flavor = "balanced";
@@ -558,7 +570,7 @@
         nltr: nagi_layer_tap_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            require-prior-idle-ms = <160>;
+            require-prior-idle-ms = <180>;
             tapping-term-ms = <200>;
             quick-tap-ms = <170>;
             flavor = "balanced";
@@ -570,7 +582,7 @@
         kltl: key_layer_tap_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            require-prior-idle-ms = <160>;
+            require-prior-idle-ms = <180>;
             tapping-term-ms = <200>;
             quick-tap-ms = <170>;
             flavor = "balanced";
@@ -581,7 +593,7 @@
         kltr: key_layer_tap_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            require-prior-idle-ms = <160>;
+            require-prior-idle-ms = <180>;
             tapping-term-ms = <200>;
             quick-tap-ms = <170>;
             flavor = "balanced";
