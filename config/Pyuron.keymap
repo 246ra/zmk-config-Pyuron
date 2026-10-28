@@ -3,7 +3,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <input/processors.dtsi>
-#include <behaviors/naginata.dtsi>
 #include <input/processors/zmk-input-processor-keybind.dtsi>
 #include <behaviors/rgbled_widget.dtsi>
 
@@ -130,19 +129,6 @@
 / {
     combos {
         compatible = "zmk,combos";
-        // 薙刀式
-        combo_ng_on {
-            timeout-ms = <20>;
-            key-positions = <15 16>;
-            bindings = <&ng_on>;
-            layers = <QWE>;
-        };
-        combo_ng_off {
-            timeout-ms = <20>;
-            key-positions = <13 14>;
-            bindings = <&ng_off>;
-            layers = <QWE NAG>;
-        };
         // wakasagi
         combo_work_on {
             timeout-ms = <20>;
@@ -381,21 +367,6 @@
             bindings = <&macro_tap &kp MINUS>,
                        <&macro_tap &kp LS(DOT)>;
         };
-        // naginata
-        ng_on: ng_on {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LANGUAGE_1 &kp INTERNATIONAL_4 &to NAG>
-                ;
-        };
-        ng_off: ng_off {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LANGUAGE_2 &kp INTERNATIONAL_5 &to QWE>
-                ;
-        };
         // AMLを解除
         ea: exit_AML {
             compatible = "zmk,behavior-macro";
@@ -555,29 +526,6 @@
             hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 27 28 29 30 31 34 35 36 37>;
             hold-trigger-on-release;
         };
-        //mod-tap(薙刀式)の設定
-        nltl: nagi_layer_tap_left {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            require-prior-idle-ms = <180>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <170>;
-            flavor = "balanced";
-            bindings = <&mo>, <&ng>;
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 27 28 29 30 31 34 35 36 37>;
-            hold-trigger-on-release;
-        };
-        nltr: nagi_layer_tap_right {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            require-prior-idle-ms = <180>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <170>;
-            flavor = "balanced";
-            bindings = <&mo>, <&ng>;
-            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 34 35 36 37>;
-            hold-trigger-on-release;
-        };
         // layerの設定(文字を入力する場合)
         kltl: key_layer_tap_left {
             compatible = "zmk,behavior-hold-tap";
@@ -685,10 +633,10 @@
 
         NAGINATA {
             bindings = <
-&ng Q        &ng W        &ng E        &ng R        &ng T                                &ng Y      &ng U        &ng I            &ng O          &ng P
-&ng A        &ng S        &ng D        &ng F        &ng G                                &ng H      &ng J        &ng K            &ng L          &ng SEMI
-&nltl MOU Z  &nltl MAC X  &nltl RAI C  &nltl LOW V  &ng B      &none       &none         &ng N      &nltr LOW M  &nltr RAI COMMA  &nltr MAC DOT  &nltr MOU FSLH
-&mo MOU      &none                                  &ng SPACE  &mo MOV     &lt LOW BSPC  &ng ENTER                                &none          &mo MOU
+&none  &none  &none  &none  &none                          &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none                          &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none  &none     &none  &none  &none  &none  &none  &none
+&none  &none                       &none  &none     &none  &none                &none  &none
             >;
         };
 
