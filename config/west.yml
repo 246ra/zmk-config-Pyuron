@@ -8,8 +8,6 @@ manifest:
       url-base: https://github.com/caksoylar  
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
-    - name: eswai
-      url-base: https://github.com/eswai
     - name: zettaface
       url-base: https://github.com/zettaface
   projects:
@@ -22,9 +20,6 @@ manifest:
       revision: main
     - name: zmk-driver-paw3222
       remote: sekigon-gonnoc
-      revision: main
-    - name: zmk-naginata
-      remote: eswai
       revision: main
     - name: zmk-input-processor-keybind
       remote: zettaface
